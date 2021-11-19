@@ -1,0 +1,32 @@
+GET localhost:7777/productservice/api/v1
+
+###
+POST localhost:7777/productservice/api/v1/save
+content-type:application/json
+
+{
+  "content":
+    {
+      "productTitle": "Java",
+      "productPrice": 333.77
+    }
+
+}
+###
+
+PUT localhost:7777/productservice/api/v1/save
+content-type:application/json
+
+{
+"content":
+{
+  "productId": 1,
+  "productTitle": "Java2",
+  "productPrice": 333.77
+}
+}
+###
+DELETE localhost:7777/productservice/api/v1/delete/1
+
+
+
