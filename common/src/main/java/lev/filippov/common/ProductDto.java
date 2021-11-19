@@ -42,4 +42,13 @@ public class ProductDto {
     public void setProductPrice(BigDecimal productPrice) {
         this.productPrice = productPrice;
     }
+
+    @Override
+    public String toString() {
+        return "ProductDto{" +
+                "productId=" + productId +
+                ", productTitle='" + productTitle + '\'' +
+                ", productPrice=" + productPrice +
+                '}';
+    }
 }

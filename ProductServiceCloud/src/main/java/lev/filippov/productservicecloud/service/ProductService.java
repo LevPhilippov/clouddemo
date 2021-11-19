@@ -38,7 +38,7 @@ public class ProductService {
 //        return mapper.productToProductDto(saved);
 //    }
     @Transactional
-    public ResponceEntity<?> save(ResponceEntity<ProductDto> responceEntity) {
+    public ResponceEntity<ProductDto> save(ResponceEntity<ProductDto> responceEntity) {
         if(responceEntity.getContent().getProductId() != null){
             throw new IdShouldBeNullToPersistEcxeption();
         }
@@ -47,7 +47,7 @@ public class ProductService {
     }
 
     @Transactional
-    public ResponceEntity<?> update(ResponceEntity<ProductDto> responceEntity) {
+    public ResponceEntity<ProductDto> update(ResponceEntity<ProductDto> responceEntity) {
         if(responceEntity.getContent().getProductId() == null){
             throw new ProductIdNotFoundException();
         }
@@ -63,7 +63,7 @@ public class ProductService {
         } else return false;
     }
 
-    public ResponceEntity<?> findById(Long id) {
+    public ResponceEntity<ProductDto> findById(Long id) {
         Product product = productRepository.findById(id).orElseThrow(() -> new ProductIdNotFoundException());
         return new ResponceEntity<>(mapper.productToProductDto(product));
     }
